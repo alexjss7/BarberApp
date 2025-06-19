@@ -1,13 +1,13 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text, View } from 'react-native'; // Para ícones de exemplo
-import { Ionicons } from '@expo/vector-icons'; // expo install @expo/vector-icons
+import { Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons'; 
 
 // Importe suas telas de cada aba
 import HomeScreen from '../screens/HomeScreen';
 import AppointmentListScreen from '../screens/Appointments/AppointmentListScreen';
 import ProductListScreen from '../screens/Products/ProductListScreen';
-import ClientListScreen from '../screens/Clients/ClientListScreen'; // Se tiver ClientsList na aba
+import ClientListScreen from '../screens/Clients/ClientListScreen'; 
 
 import { globalStyles, colors } from '../styles/globalStyles';
 
@@ -17,13 +17,13 @@ const HomeTabNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerShown: false, // Oculta o cabeçalho padrão das tabs
+        headerShown: false, 
         tabBarActiveTintColor: colors.secondary,
         tabBarInactiveTintColor: colors.text,
         tabBarStyle: {
           backgroundColor: colors.primary,
           borderTopColor: colors.border,
-          height: 60, // Ajuste de altura para melhor visualização
+          height: 60, 
           paddingBottom: 5,
           paddingTop: 5,
         },
@@ -43,7 +43,7 @@ const HomeTabNavigator: React.FC = () => {
           } else if (route.name === 'Clientes') {
             iconName = focused ? 'people' : 'people-outline';
           } else {
-            iconName = 'help-circle'; // Fallback icon
+            iconName = 'help-circle';
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;

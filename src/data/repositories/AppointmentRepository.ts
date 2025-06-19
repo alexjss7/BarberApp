@@ -7,16 +7,14 @@ import Realm from 'realm';
 class AppointmentRepository {
   async getAllAppointments(): Promise<Appointment[]> {
     const realm = await getRealm();
-    // Use .toJSON() para garantir que os objetos sejam "desanexados" do Realm
-    // e possam ser facilmente manipulados pelo React State.
+.
     return realm.objects<Appointment>('Appointment').sorted('date').toJSON();
   }
 
   async saveAppointment(appointmentData: {
     _id?: Realm.BSON.ObjectId;
-    clientId: Realm.BSON.ObjectId; // ID do cliente
-    serviceId: Realm.BSON.ObjectId; // ID do serviço
-    date: Date;
+    clientId: Realm.BSON.ObjectId; 
+    serviceId: Realm.BSON.ObjectId; 
     barberName: string;
     status: string;
   }): Promise<Appointment> {

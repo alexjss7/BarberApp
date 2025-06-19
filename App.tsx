@@ -8,13 +8,12 @@ import Realm from "realm";
 import { getRealm } from "./src/data/RealmConfig";
 
 export default function App() {
-  // Opcional: Adicionar lógica para inicializar dados de teste
-  // Isso é útil para ter alguns dados ao iniciar o app pela primeira vez
+
   const initializeData = async () => {
     try {
       const realm = await getRealm();
       realm.write(() => {
-        // Exemplo: Criar alguns serviços se não existirem
+       
         if (realm.objects("Service").length === 0) {
           realm.create("Service", {
             _id: new Realm.BSON.ObjectId(),
@@ -35,7 +34,7 @@ export default function App() {
             duration: 20,
           });
         }
-        // Exemplo: Criar alguns produtos se não existirem
+    
         if (realm.objects("Product").length === 0) {
           realm.create("Product", {
             _id: new Realm.BSON.ObjectId(),
